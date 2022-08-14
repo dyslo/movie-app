@@ -19,13 +19,13 @@ const Detail = () => {
             //console.log(data);
         })();
     }, [params.movieId]);
-
     //console.log(Object.entries(movie));
     if (loading) { return <div>loading..</div> }
     return (
         <Wrapper>
             <Header>
                 <DataWrapper>
+                    {(movie.adult === true) ? <NSFW>성인 영화</NSFW> : <></>}
                     <MovieTitle>{movie.title}</MovieTitle>
                     {(movie.title !== movie.original_title) ? <MovieOriginalTitle>{movie.original_title}</MovieOriginalTitle> : <></>}
                     <Divider />
@@ -56,6 +56,12 @@ const Header = styled.div`
     justify-content: space-between;
     width: 700px;
     height: auto;
+`;
+
+const NSFW = styled.p`
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff0000;
 `;
 
 const DataWrapper = styled.div`
