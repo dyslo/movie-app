@@ -44,7 +44,7 @@ const Detail = () => {
 
 const Wrapper = styled.div`
     display: flex;
-    margin: 50px auto;
+    margin: 0 auto;
     flex-direction: column;
     justify-content: center;
     width: 700px;
